@@ -4,11 +4,8 @@ class Solution:
         res =""
         
         for sym, n in reversed(li):
-            if num // n:
-                count = num//n
-                print(count)
-                res+= (sym * count)
-                print(res)
-                num = num % n
+            while num >= n:
+                res += sym
+                num -= n
         return res
                 
