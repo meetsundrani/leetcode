@@ -3,10 +3,8 @@ class NumArray:
     def __init__(self, nums: List[int]):
         self.prefix = []
         cur = 0
-        print(self.prefix)
         for n in nums:
             cur += n
-            print(cur)
             self.prefix.append(cur)
         
 
