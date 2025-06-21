@@ -3,11 +3,6 @@ class Solution:
         if len(original) != m * n:
             return []
         
-        result = []
-        for i in range(m):
-            row = original[i * n : (i + 1) * n]
-            result.append(row)
-        
-        return result
+        return [original[i * n : (i + 1) * n] for i in range(m)]
 
         
