@@ -1,8 +1,8 @@
 class Solution:
     def findDuplicate(self, nums: List[int]) -> int:
-        dic ={}
+        visited = [0] * len(nums)
         for i in nums:
-            if i in dic:
+            if visited[i] == -1:
                 return i
-            else:
-                dic[i] = 1
+            visited[i] = -1
+        return i
