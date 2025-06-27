@@ -3,4 +3,5 @@ class Solution:
         res = []
         for i in nums:
             res.append(i*i)
-        return sorted(res)
+        res.sort()
+        return res 
