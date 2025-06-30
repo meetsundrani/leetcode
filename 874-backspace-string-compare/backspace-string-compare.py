@@ -14,7 +14,8 @@ class Solution:
             else:
                 if len(l2) !=0:
                     l2.pop()
-        if ''.join(l1)==''.join(l2):
+                    
+        if ''.join(l1) ==''.join(l2):
             return True
         else:
             return False
