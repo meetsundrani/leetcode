@@ -6,16 +6,20 @@ class Solution:
             if i != '#':
                 l1.append(i)
             else:
-                if len(l1) !=0:
+                if len(l1) > 0:
                     l1.pop()
+
         for i in t:
             if i != '#':
                 l2.append(i)
             else:
-                if len(l2) !=0:
-                    l2.pop()
-                    
-        if ''.join(l1) ==''.join(l2):
+                if len(l2) > 0:
+                    l2.pop()  
+
+        if ''.join(l1) == ''.join(l2):
             return True
         else:
             return False
+
+
+        
