@@ -4,3 +4,7 @@ class Solution:
         squares.sort()
         
         return squares
+            
+        
+                
+        
