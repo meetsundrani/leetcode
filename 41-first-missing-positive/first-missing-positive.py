@@ -1,10 +1,9 @@
 class Solution:
     def firstMissingPositive(self, nums: List[int]) -> int:
-        n = 1
-        for i in sorted(nums):
-            if i==n:
-                n+=1
-        return n
+        j= set(nums)
+        for i in range(1,len(nums)+2):
+            if i not in j:
+                return i
 
 
             
