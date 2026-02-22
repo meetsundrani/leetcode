@@ -3,16 +3,16 @@
  * @return {boolean}
  */
 var isPalindrome = function(x) {
-    const res = [];
-    const nums = [...x.toString().split('')]
-    nums.forEach((val) => {
-        res.unshift(Number(val))
-    })
-    const ix = Number(res.join(''))
-    
-    if (ix === x){
-        return true
+   while(x<0){
+        return false;
     }
-    
-   return false;
+    let orginal = x;
+    let reverse=0 ;
+
+    while(x>0){
+        reverse = reverse * 10 + x%10
+        x = Math.floor(x/10)
+    }
+
+    return orginal === reverse
 };
