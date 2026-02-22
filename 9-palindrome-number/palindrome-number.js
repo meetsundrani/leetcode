@@ -3,16 +3,15 @@
  * @return {boolean}
  */
 var isPalindrome = function(x) {
-   while(x<0){
+    while(x < 0) {
         return false;
     }
-    let orginal = x;
-    let reverse=0 ;
+  let og = x;
+  let rev = 0;
+  while (x > 0) {
+    rev = rev * 10 + x%10;
+    x = Math.floor(x/10);
+  }
 
-    while(x>0){
-        reverse = reverse * 10 + x%10
-        x = Math.floor(x/10)
-    }
-
-    return orginal === reverse
+  return og === rev;
 };
