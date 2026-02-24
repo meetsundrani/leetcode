@@ -3,6 +3,7 @@
  * @return {boolean}
  */
 var isPowerOfTwo = function(n) {
-    if(n===0) return false
-    return Math.floor(Math.log2(n)) === Math.ceil(Math.log2(n));
+  if(n===1) return true;
+    else if(n%2 !== 0 || n<1) return false;
+    return isPowerOfTwo(n/2);
 };
