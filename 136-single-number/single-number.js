@@ -4,8 +4,8 @@
  */
 var singleNumber = function(nums) {
     let result = 0
-    nums.forEach((ele) => {
-        result ^= ele
-    })
+   for(const i of nums){
+    result ^= i
+   }
     return result
 };
