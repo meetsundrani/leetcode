@@ -1,0 +1,97 @@
+class Node {
+    constructor(val) {
+        this.val = val;
+        this.next = null;
+    }
+}
+class MyLinkedList {
+  constructor() {
+        this.head = null;
+        this.size = 0;
+    }
+};
+
+/** 
+ * @param {number} index
+ * @return {number}
+ */
+MyLinkedList.prototype.get = function(index) {
+    if (index < 0 || index >= this.size) return -1;
+
+    let curr = this.head;
+    for (let i = 0; i < index && curr; i++) {
+        curr = curr.next;
+    }
+
+    return curr ? curr.val : -1;
+};
+
+/** 
+ * @param {number} val
+ * @return {void}
+ */
+MyLinkedList.prototype.addAtHead = function(val) {
+    const node = new Node(val);
+        node.next = this.head;
+        this.head = node;
+        this.size++;
+};
+
+/** 
+ * @param {number} val
+ * @return {void}
+ */
+MyLinkedList.prototype.addAtTail = function(val) {
+    const node = new Node(val);
+    if(!this.head){
+        this.head = node;
+    } else {
+        let curr = this.head;
+        while(curr.next) curr = curr.next;
+        curr.next = node;
+    }
+    this.size++;
+};
+
+/** 
+ * @param {number} index 
+ * @param {number} val
+ * @return {void}
+ */
+MyLinkedList.prototype.addAtIndex = function(index, val) {
+    if(index < 0 || index > this.size) return
+    if (index === 0) return this.addAtHead(val);
+        let curr = this.head;
+    for(let i=0;i < index - 1; i++) curr = curr.next;
+    const node = new Node(val);
+        node.next = curr.next;
+        curr.next = node;
+        this.size++;
+};
+
+/** 
+ * @param {number} index
+ * @return {void}
+ */
+MyLinkedList.prototype.deleteAtIndex = function(index) {
+    if(index < 0 || index >= this.size) return
+    if(index === 0) {
+        this.head = this.head.next;
+    } else {
+        let curr = this.head;
+        for(let i = 0; i< index -1 ;i++) curr = curr.next;
+        curr.next = curr.next.next;
+    }
+    this.size--;
+
+};
+
+/** 
+ * Your MyLinkedList object will be instantiated and called as such:
+ * var obj = new MyLinkedList()
+ * var param_1 = obj.get(index)
+ * obj.addAtHead(val)
+ * obj.addAtTail(val)
+ * obj.addAtIndex(index,val)
+ * obj.deleteAtIndex(index)
+ */
