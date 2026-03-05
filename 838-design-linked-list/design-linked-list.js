@@ -23,7 +23,7 @@ MyLinkedList.prototype.get = function(index) {
         curr = curr.next;
     }
 
-    return curr ? curr.val : -1;
+    return curr.val;
 };
 
 /** 
