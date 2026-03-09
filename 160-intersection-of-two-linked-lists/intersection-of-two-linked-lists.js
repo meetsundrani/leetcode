@@ -12,11 +12,11 @@
  * @return {ListNode}
  */
 var getIntersectionNode = function(headA, headB) {
-   let list1 = headA, list2 = headB;
-   while(list1 !== list2){
-    list1 = list1 ? list1.next : headB;
-    list2 = list2 ? list2.next : headA;
-   }
-   console.log(list1, list2)
-   return list2
+  let list1 = headA;
+  let list2 = headB;
+  while(list1 !== list2){
+    list1 = list1 === null ? headB: list1.next;
+    list2 = list2 === null ? headA: list2.next;
+  }
+  return list2;
 };
