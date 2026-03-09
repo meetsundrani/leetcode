@@ -13,23 +13,23 @@
 var removeNthFromEnd = function(head, n) {
     let dummy = new ListNode(0, head);
     let prev = dummy, curr = head;
-    let counter = 0;
+    let size = 0;
+    let indx = 0;
     while(curr){
         curr = curr.next
-        counter++;
+        size++
     }
-    curr = head
-    let ind = 0
+    curr = head;
     while(curr){
-        const remInd = counter - n;
-        let nxt = curr.next
-        if(ind === remInd){
+        const remInd = size - n;
+        let nxt = curr.next;
+        if(remInd === indx){
             prev.next = nxt;
         } else{
-            prev = curr
+            prev = curr;
         }
         curr = nxt
-        ind++;
+        indx++
     }
     return dummy.next
 };
