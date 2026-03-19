@@ -4,12 +4,12 @@
  * @return {number[]}
  */
 var findWordsContaining = function(words, x) {
-    let indices = [];
-    for(let i = 0; i < words.length; i++){
-        if(words[i].includes(x)) {
-            indices.push(i);
+       let a = []
+    for(let i =0;i<words.length;i++){
+        if(words[i].includes(x)){
+            a.push(i)
         }
     }
-    console.log(indices);
-    return indices;
+
+    return a
 };
