@@ -4,22 +4,19 @@
  * @return {boolean}
  */
 var isIsomorphic = function(s, t) {
-    const charMap = {};
-
-    for (let i = 0; i < s.length; i++) {
-        const sc = s[i];
-        const tc = t[i];
-
-        if (charMap[sc]) {
-            if (charMap[sc] !== tc) {
+    if(s.length !== t.length) return false;
+    const li = {};
+    for(let i = 0; i< s.length;i++){
+        const og = s[i];
+        const rep = t[i];
+        if(li[og]){
+            if(li[og] !== rep){
                 return false;
             }
-        } else if (Object.values(charMap).includes(tc)) {
+        } else if (Object.values(li).includes(rep)){
             return false;
         }
-
-        charMap[sc] = tc;
+        li[og] = rep;
     }
-
-    return true;    
+    return true;
 };
